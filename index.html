@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лидеры России</title>
+    <link rel="icon" href="photos/logo.png" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+            background: url(photos/fon.png) no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.45); 
+            z-index: -1;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            font-size: 20px;
+            background: rgba(0, 0, 0, 0.4);
+            flex-wrap: wrap;
+        }
+
+        .header img {
+            height: 40px;
+            max-height: 50px;
+        }
+
+        .main {
+            display: flex;
+            justify-content: center;
+            gap: 200px;
+            margin-top: 60px;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+
+        a.big-button,
+        a.rect-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        a.big-button {
+            width: 240px;
+            height: 80px;
+            border: none;
+            border-radius: 40px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .blue {
+            background-color: #1e40af;
+            color: white;
+        }
+
+        .red {
+            background-color: #dc2626;
+            color: white;
+        }
+
+        a.rect-button {
+            width: 240px;
+            height: 80px;
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+            border-radius: 20px;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        a.big-button:hover,
+        a.rect-button:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
+        .center-button {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            font-size: 14px;
+            flex-wrap: wrap;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            margin: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .main {
+                flex-direction: column;
+                align-items: center;
+                gap: 50px;
+            }
+
+            .header {
+                justify-content: center;
+                gap: 10px;
+                text-align: center;
+            }
+
+            a.big-button,
+            a.rect-button {
+                width: 90%;
+            }
+
+            .footer {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div><img src="photos/logo.png" alt="Логотип"></div>
+        <div>Лидеры России</div>
+    </div>
+
+    <div class="main">
+        <div class="column">
+            <a href="regist.html" class="big-button blue">зарегестрироваться</a>
+            <a href="info.html" class="rect-button">информ бюро</a>
+            <a href="dejur.html" class="rect-button">дежурный по москве</a>
+        </div>
+        <div class="column">
+            <a href="enter.html" class="big-button red">войти</a>
+            <a href="moscow.html" class="rect-button">показать москву</a>
+            <a href="https://careertest.ru/tests/" class="rect-button">В своей сфере</a>
+        </div>
+    </div>
+
+    <div class="center-button">
+        <a href="https://t.me/way_near_bot" class="rect-button">Психологический тест</a>
+    </div>
+
+    <div class="footer">
+        <a href="#">Контакты</a>
+        <a href="#">Социальные сети</a>
+        <a href="#">Условия использования</a>
+        <a href="#">Политика конфиденциальности</a>
+    </div>
+</body>
+</html>

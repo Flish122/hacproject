@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Информбюро — Льготы</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Кастомные стили */
+    .custom-button {
+      background-color: #d7f36d;
+      border: none;
+      padding: 18px 24px;
+      font-size: 18px;
+      width: 100%; /* Кнопки будут растягиваться по ширине */
+      text-align: center;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      color: black;
+      font-weight: bold;
+      line-height: 1.2;
+    }
+
+    .custom-button:hover {
+      background-color: #c7e75e;
+      transform: scale(1.03);
+    }
+
+    .custom-button.active {
+      background-color: #ffc107;
+      color: white;
+      transform: scale(1.05);
+    }
+
+    /* Отступы для контента */
+    main {
+      padding-top: 40px;
+    }
+
+    /* Стили для левого меню */
+    .sidebar-left {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch; /* Кнопки заполняют всю ширину */
+      justify-content: flex-start; /* Выравнивание по верхнему краю */
+      width: 240px;
+      padding-top: 40px;
+      gap: 30px;
+      height: 100vh; /* Меню будет растягиваться на всю высоту экрана */
+    }
+
+    /* Стили для правого блока с изображениями */
+    .sidebar-right {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 300px; /* Увеличиваем ширину правой панели */
+    }
+
+    .sidebar-right img {
+      width: 100%;
+      height: auto;
+      max-height: 500px; /* Ограничиваем высоту изображений */
+    }
+
+    /* Центрирование содержимого */
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* Ограничение ширины контента */
+    .content-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    /* Отступы для кнопок в меню */
+    .menu-button {
+      padding: 20px 30px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+
+<body class="bg-cover bg-center min-h-screen text-black font-sans" style="background-image: url(photos/mountain.png);">
+  <div class="flex flex-col min-h-screen backdrop-blur-sm">
+    <!-- Header -->
+    <div class="flex flex-1">
+      <!-- Левое меню -->
+      <nav class="sidebar-left p-6">
+        <a href="info.html">
+          <button class="custom-button menu-button">Поддержка</button>
+        </a>
+        <a href="info2.html">
+          <button class="custom-button menu-button active">Льготы</button>
+        </a>
+        <a href="info3.html">
+          <button class="custom-button menu-button">Материальная помощь</button>
+        </a>
+      </nav>
+
+      <!-- Основной контент -->
+      <main class="flex-1 px-6 py-4 space-y-6 content-wrapper">
+        <h2 class="text-4xl font-bold mb-4">Льготы</h2>
+
+        <section class="bg-yellow-100 p-6 rounded-xl shadow-md space-y-4 max-w-4xl">
+          <p>Единовременные выплаты. Участники СВО могут получить единовременную денежную выплату, размер которой варьируется в зависимости от степени участия в операции.</p>
+          <p>Пенсии для военнослужащих. Участники СВО могут претендовать на досрочное назначение пенсии по выслуге лет.</p>
+          <p>Льготы на медицинское обслуживание. Участники СВО и члены их семей имеют право на бесплатное медицинское обслуживание, включая профилактические и восстановительные программы.</p>
+          <p>Право на бесплатный проезд. В некоторых регионах участники СВО могут получить право на бесплатный проезд на общественном транспорте.</p>
+        </section>
+
+        <section class="bg-yellow-100 p-6 rounded-xl shadow-md space-y-4 max-w-4xl">
+          <p>Приоритет при поступлении. Дети участников СВО имеют право на приоритет при поступлении в учебные заведения, включая высшие учебные заведения.</p>
+          <p>Снижение стоимости обучения. Участники СВО могут претендовать на скидки или освобождение от платы за обучение в различных образовательных учреждениях.</p>
+          <p>Субсидии на жилье. Участники СВО могут получить денежные субсидии на приобретение жилья или улучшение жилищных условий.</p>
+          <p>Право на земельные участки. В некоторых случаях участники СВО могут получить земельные участки для строительства индивидуального жилья.</p>
+        </section>
+      </main>
+
+      <!-- Правый блок с картинками -->
+      <aside class="sidebar-right p-6">
+        <img src="photos/brain.png" alt="Карточка 1" class="rounded-2xl shadow-xl w-full" />
+        <img src="photos/pocciy.png" alt="Карточка 2" class="rounded-2xl shadow-xl w-full" />
+      </aside>
+    </div>
+  </div>
+</body>
+
+</html>

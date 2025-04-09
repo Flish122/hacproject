@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карта Москвы с достопримечательностями</title>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: sans-serif;
+        }
+        #map {
+            width: 100%;
+            height: 100vh;
+        }
+        .placemark-image {
+            max-width: 200px;
+            max-height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <script type="text/javascript">
+        ymaps.ready(init);
+
+        function init() {
+            const map = new ymaps.Map("map", {
+                center: [55.751574, 37.573856], // Центр Москвы
+                zoom: 11
+            });
+
+            const landmarks = [
+                {
+                    coords: [55.752023, 37.617499],
+                    name: "Красная площадь",
+                    image: "photos/a.jpg",
+                    description: "Красная площадь — центральная площадь Москвы, исторический центр города.",
+                    wikiLink: "https://ru.wikipedia.org/wiki/Красная_площадь"
+                },
+                {
+                    coords: [55.753930, 37.620795],
+                    name: "Кремль",
+                    image: "photos/b.jpg",
+                    description: "Московский Кремль — исторический, культурный и административный центр столицы России.",
+                    wikiLink: "https://ru.wikipedia.org/wiki/Московский_Кремль"
+                },
+                {
+                    coords: [55.750111, 37.618707],
+                    name: "Храм Василия Блаженного",
+                    image: "photos/c.jpg",
+                    description: "Храм Василия Блаженного — православный храм на Красной площади в Москве.",
+                    wikiLink: "https://ru.wikipedia.org/wiki/Храм_Василия_Блаженного"
+                },
+                {
+                    coords: [55.832553, 37.629428],
+                    name: "ВДНХ",
+                    image: "photos/d.jpg",
+                    description: "ВДНХ — Всероссийский выставочный центр, крупнейший выставочный комплекс в Москве.",
+                    wikiLink: "https://ru.wikipedia.org/wiki/ВДНХ"
+                },
+                {
+                    coords: [55.703294, 37.530250],
+                    name: "МГУ",
+                    image: "photos/e.jpg",
+                    description: "Московский государственный университет — ведущий вуз России.",
+                    wikiLink: "https://ru.wikipedia.org/wiki/Московский_государственный_университет"
+                },
+                {
+                    coords: [55.729876, 37.603456],
+                    name: "Парк Горького",
+                    image: "photos/f.jpg",
+                    description: "Парк Горького — крупнейший городской парк в Москве.",
+                    wikiLink: "https://ru.wikipedia.org/wiki/Парк_Горького"
+                },
+                {
+                    coords: [55.747899, 37.537317],
+                    name: "Москва-Сити",
+                    image: "photos/g.jpg",
+                    description: "Москва-Сити — деловой район в центре Москвы.",
+                    wikiLink: "https://ru.wikipedia.org/wiki/Москва-Сити"
+                },
+                {
+                    coords: [55.726114, 37.554618],
+                    name: "Новодевичий монастырь",
+                    image: "photos/h.jpg",
+                    description: "Новодевичий монастырь — православный монастырь в Москве.",
+                    wikiLink: "https://ru.wikipedia.org/wiki/Новодевичий_монастырь"
+                },
+                {
+                    coords: [55.756859, 37.620270],
+                    name: "Третьяковская галерея",
+                    image: "photos/i.jpg",
+                    description: "Третьяковская галерея — крупнейшая коллекция русского искусства.",
+                    wikiLink: "https://ru.wikipedia.org/wiki/Третьяковская_галерея"
+                },
+                {
+                    coords: [55.7558, 37.6176],
+                    name: "Большой театр",
+                    image: "photos/j.jpg",
+                    description: "Большой театр — один из крупнейших театров России.",
+                    wikiLink: "https://ru.wikipedia.org/wiki/Большой_театр"
+                },
+                {
+                    coords: [55.7555, 37.6173],
+                    name: "Петропавловский собор",
+                    image: "photos/k.jpg",
+                    description: "Петропавловский собор — собор в Москве, памятник русской архитектуры.",
+                    wikiLink: "https://ru.wikipedia.org/wiki/Петропавловский_собор"
+                }
+            ];
+
+            landmarks.forEach(place => {
+                const placemark = new ymaps.Placemark(place.coords, {
+                    balloonContent: `
+                        <div>
+                            <strong>${place.name}</strong>
+                            <br>
+                            <img src="${place.image}" class="placemark-image" alt="${place.name}">
+                            <br>
+                            <p>${place.description}</p>
+                            <a href="${place.wikiLink}" target="_blank">Подробнее на Википедии</a>
+                        </div>`
+                }, {
+                    iconLayout: 'default#image',
+                    iconImageHref: place.image, // фото в флажке
+                    iconImageSize: [40, 40], // размер флажка
+                    iconImageOffset: [-20, -20] // чтобы маркер был по центру
+                });
+                map.geoObjects.add(placemark);
+            });
+        }
+    </script>
+</body>
+</html>

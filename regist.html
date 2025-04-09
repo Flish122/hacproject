@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+    <link rel="icon" href="photos/logo.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: url(photos/fonreg.png) no-repeat center center fixed;
+            background-size: cover;
+            position: relative;
+            color: black;
+            overflow: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            z-index: -1;
+        }
+
+        .top-bar {
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 15px 30px;
+            font-size: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar a {
+            text-decoration: none;
+        }
+
+        .back-arrow {
+            font-size: 24px;
+            padding: 10px;
+            cursor: pointer;
+            color: white;
+            transition: transform 0.2s, color 0.2s;
+        }
+
+        .back-arrow:hover {
+            transform: translateX(-5px);
+            color: #ccc;
+        }
+
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.6);
+            border-radius: 30px;
+            padding: 30px 40px;
+            width: 400px;
+            max-width: 90%;
+            margin: 80px auto;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+        }
+
+        .form-container label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 6px;
+            font-size: 16px;
+        }
+
+        .form-container input[type="text"],
+        .form-container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 25px;
+            font-size: 16px;
+            border: none;
+            border-bottom: 2px solid gray;
+            background-color: transparent;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            margin-right: 10px;
+            width: 18px;
+            height: 18px;
+        }
+
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox-group a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .checkbox-group a:hover {
+            text-decoration: underline;
+        }
+
+        .register-button {
+            width: 100%;
+            height: 45px;
+            background-color: #A7C957;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .register-button:hover {
+            background-color: #91b74d;
+        }
+
+        @media (max-width: 480px) {
+            .top-bar {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
+
+            .form-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <a href="index.html" aria-label="Назад на главную">
+            <div class="back-arrow">&#8592;</div>
+        </a>
+        <div>Регистрация</div>
+    </div>
+
+    <div class="form-container">
+        <form action="#" method="post">
+            <label for="username">Имя пользователя:</label>
+            <input type="text" id="username" name="username" placeholder="Введите имя пользователя" required>
+
+            <label for="passport">Серия и номер паспорта (без пробелов):</label>
+            <input type="text" id="passport" name="passport" placeholder="Например: 1234567890" required>
+
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" placeholder="Придумайте пароль" required>
+
+            <label for="confirm">Повторите пароль:</label>
+            <input type="password" id="confirm" name="confirm" placeholder="Введите пароль ещё раз" required>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="agree" required>
+                <label for="agree">
+                    Я согласен(-на) с <a href="http://www.consultant.ru/document/cons_doc_LAW_61801/" target="_blank">обработкой персональных данных</a>
+                </label>
+            </div>
+
+            <button class="register-button" type="submit">Регистрация</button>
+        </form>
+    </div>
+
+</body>
+</html>

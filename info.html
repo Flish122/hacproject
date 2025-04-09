@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поддержка</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url(photos/mountain.png) no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+            backdrop-filter: blur(2px);
+        }
+
+        .sidebar {
+            padding: 40px 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            width: 240px;
+        }
+
+        .sidebar button {
+            background-color: #d7f36d;
+            border: none;
+            padding: 35px 20px;
+            font-size: 20px;
+            width: 180px;
+            text-align: center;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: black;
+            font-weight: bold;
+            line-height: 1.2;
+        }
+
+        .sidebar button:hover {
+            background-color: #c7e75e;
+            transform: scale(1.03);
+        }
+
+        .sidebar button.active {
+            background-color: #ffc107; /* цвет активной кнопки */
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .content {
+            flex: 1;
+            padding: 40px;
+            color: #000;
+            overflow-y: auto;
+        }
+
+        .card {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 20px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            max-width: 800px;
+        }
+
+        .image-box {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .image-box img {
+            width: 260px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <a href="info.html">
+                <button class="">поддержка</button>
+            </a>
+            <a href="info2.html">
+                <button class="">льготы</button>
+            </a>
+            <a href="info3.html">
+                <button class="">материа-<br>льная помощь</button>
+            </a>
+        </div>
+        <div class="content" id="main-content">
+            <div id="support" class="section">
+                <h1>Поддержка</h1>
+                <div class="card">
+                    Единовременные выплаты. Военные, вернувшиеся с СВО, могут получить единовременные выплаты от государства. Сумма зависит от степени участия в операции и других факторов. Субсидии. Существуют субсидии на жилье, которые могут быть назначены для улучшения жилищных условий военнослужащих и их семей. Психологическая помощь. Для военнослужащих и их семей доступны услуги психологов и консультантов, которые помогают адаптироваться к мирной жизни. В различных субъектах России можно найти программы помощи, которые могут включать в себя различные меры поддержки, такие как обучение, переобучение, трудоустройство и социальные услуги.
+                </div>
+                <div class="image-box">
+                    <img src="photos/help.png" alt="Дом и помощь">
+                    <img src="photos/home.png" alt="Будь с нами">
+                    <img src="photos/helps.png" alt="Помощь">
+                </div>
+                <div class="card">
+                    Существуют общественные организации и фонды, которые помогают ветеранам и их семьям, предоставляя юридическую и социальную поддержку, а также организуя мероприятия и встречи для повышения социальной активности.
+                </div>
+                <div class="card">
+                    В некоторых регионах реализуются специальные программы по обеспечению жильем семей военнослужащих, которые могут включать выделение земельных участков или построение нового жилья.
+                </div>
+            </div>
+            <div id="benefits" class="section" style="display: none;">
+                <h1>Льготы</h1>
+                <div class="card">Контент про льготы...</div>
+            </div>
+            <div id="aid" class="section" style="display: none;">
+                <h1>Материальная помощь</h1>
+                <div class="card">Контент про материальную помощь...</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Скрыть все секции
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(sec => sec.style.display = 'none');
+            document.getElementById(sectionId).style.display = 'block';
+
+            // Удалить активный класс со всех кнопок
+            const buttons = document.querySelectorAll('.sidebar button');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            // Добавить активный класс к нажатой кнопке
+            const clickedButton = Array.from(buttons).find(btn =>
+                btn.getAttribute('onclick').includes(sectionId)
+            );
+            if (clickedButton) {
+                clickedButton.classList.add('active');
+            }
+        }
+
+        // При загрузке страницы — открыть "поддержка"
+        document.addEventListener('DOMContentLoaded', () => {
+            showSection('support');
+        });
+    </script>
+</body>
+</html>

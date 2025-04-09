@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Дежурный по МСК</title>
+    <link rel="icon" href="photos/logo.png" type="image/x-icon"/>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        background: url("photos/dejur.png") no-repeat center center fixed;
+        background-size: cover;
+        color: white;
+    }
+
+    .container {
+        padding: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .top-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #ccc;
+        padding: 10px 20px;
+        flex-wrap: wrap;
+    }
+
+    .top-bar a {
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+    }
+
+    .back-arrow {
+        font-size: 26px;
+        cursor: pointer;
+        transition: transform 0.2s, color 0.2s;
+    }
+
+    .back-arrow:hover {
+        transform: translateX(-5px);
+        color: #bbb;
+    }
+
+    h2 {
+        font-size: 24px;
+        text-align: center;
+        flex-grow: 1;
+    }
+
+    .section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 30px;
+    }
+
+    .card {
+        width: 48%;
+        background: rgba(220, 231, 211, 0.85);
+        color: black;
+        border-radius: 12px;
+        margin-bottom: 20px;
+        padding: 15px;
+        display: flex;
+        gap: 15px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+    }
+
+    .card:nth-child(even) {
+        background: rgba(227, 220, 194, 0.85);
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+    .card-text {
+        max-width: 60%;
+    }
+
+    .card img {
+        width: 35%;
+        border-radius: 12px;
+        object-fit: cover;
+    }
+
+    h3 {
+        margin-top: 0;
+    }
+
+    @media (max-width: 768px) {
+        .card {
+        flex-direction: column;
+        width: 100%;
+        }
+
+        .card-text {
+        max-width: 100%;
+        }
+
+        .card img {
+        width: 100%;
+        height: auto;
+        margin-top: 10px;
+        }
+
+        .top-bar {
+        flex-direction: column;
+        gap: 10px;
+        }
+
+        h2 {
+        text-align: center;
+        font-size: 20px;
+    }
+    }
+</style>
+</head>
+<body>
+<div class="top-bar">
+    <a href="index.html" title="Назад на главную">
+    <div class="back-arrow">&#8592;</div>
+    </a>
+    <h2>Дежурный по МСК</h2>
+</div>
+
+<div class="container">
+    <div class="section">
+    <div class="card">
+        <div class="card-text">
+        <h3>Центр амбулаторной медицинской помощи участникам СВО</h3>
+        <p><strong>График работы:</strong> вторник–воскресенье с 9:00 до 21:00<br>
+            <strong>Адрес:</strong> Москва, Береговой проезд, д. 8, стр. 2<br>
+            <strong>Передачи и посещения:</strong> ежедневно с 16:00 до 19:00</p>
+        </div>
+        <img src="photos/1.png" alt="Центр амбулаторной помощи">
+    </div>
+
+    <div class="card">
+        <div class="card-text">
+        <h3>Городская клиническая больница имени Боткина</h3>
+        <p><strong>Адрес:</strong> 2-й Боткинский проезд, дом 5<br>
+            <strong>Посещения:</strong><br>
+            Пн–Пт: с 16:00 до 19:00<br>
+            Выходные: с 11:00 до 13:00 и с 16:00 до 19:00</p>
+        </div>
+        <img src="photos/2.png" alt="Больница Боткина">
+    </div>
+
+    <div class="card">
+        <div class="card-text">
+        <h3>Госпиталь для ветеранов войн №3</h3>
+        <p><strong>Адрес:</strong> ул. Стартовая, д. 4<br>
+            Пн–Пт: 8:00–20:00<br>
+            Сб: 9:00–18:00<br>
+            Вс: 9:00–16:00</p>
+        </div>
+        <img src="photos/3.png" alt="Госпиталь ветеранов №3">
+    </div>
+
+        <div class="card">
+        <div class="card-text">
+            <h3>Городская клиническая больница №24</h3>
+            <p><strong>Адрес:</strong> Писцовая ул., д. 10, Москва<br>
+            Пн–Пт: 08:30–19:00<br>
+            Сб: 08:30–16:00<br>
+            <strong>Часы посещения:</strong><br>
+            Будни: с 16:00 до 19:00<br>
+            Выходные/праздники: с 11:00 до 13:00 и с 16:00 до 19:00</p>
+        </div>
+        <img src="photos/4.png" alt="Городская клиническая больница №24">
+    </div>
+    </div>
+</div>
+</body>
+</html>

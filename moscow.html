@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+    <link rel="icon" href="photos/logo.png" type="image/x-icon">
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url(photos/fon2.png) no-repeat center center fixed;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: black;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            font-size: 20px;
+            color: black;
+        }
+
+        .top-bar a {
+            text-decoration: none; /* Убирает подчеркивание */
+        }
+
+        .back-arrow {
+            font-size: 24px;
+            padding: 10px;
+            cursor: pointer;
+            color: black;
+            transition: transform 0.2s, color 0.2s;
+        }
+
+        .back-arrow:hover {
+            transform: translateX(-5px);
+            color: #666;
+        }
+
+        .floating-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #006400; /* Темно-зеленый */
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        .floating-button:hover {
+            background-color: #004d00; /* Темнее при наведении */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <a href="1.html" aria-label="Назад на главную">
+            <div class="back-arrow">&#8592;</div>
+        </a>
+    </div>
+
+    <a href="1.html" class="floating-button">К достопримечательностям</a>
+
+
+</body>
+</html>
